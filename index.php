@@ -37,20 +37,19 @@ include 'db_connect.php';
                     die("Connection failed: " . $conn->error);
                 }
                 while ($row = $result->fetch_assoc()) {
-                    echo "
+                    echo '
                     <tr>
-                        <td>{$row['id']}</td>
-                        <td>{$row['name']}</td>
-                        <td>{$row['email']}</td>
-                        <td>{$row['address']}</td>
-                        <td>{$row['phone']}</td>
-                        <td>{$row['created_at']}</td>
+                        <td>' . $row['id'] . '</td>
+                        <td>' . $row['name'] . '</td>
+                        <td>' . $row['email'] . '</td>
+                        <td>' . $row['address'] . '</td>
+                        <td>' . $row['phone'] . '</td>
+                        <td>' . $row['created_at'] . '</td>
                         <td>
-                            <a class='btn btn-danger btn-sm' href='/myshop/edit.php'>Edit</a>
-                            <a class='btn btn-danger btn-sm' href='/myshop/delete.php'>Delete</a>
+                            <a class="btn btn-danger btn-sm" href="/myshop/edit.php?id=' . $row['id'] . '">Edit</a>
+                            <a class="btn btn-danger btn-sm" href="/myshop/delete.php?id=' . $row['id'] . '">Delete</a>
                         </td>
-                    </tr>
-                    ";
+                    </tr>';
                 }
                 ?>
             </tbody>
