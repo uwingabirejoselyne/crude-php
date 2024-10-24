@@ -1,3 +1,6 @@
+<?php
+include 'db_connect.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,11 +23,25 @@
                     <th scope="col">Name</th>
                     <th scope="col">Email</th>
                     <th scope="col">Address</th>
+                    <th scope="col">Phone</th>
                     <th scope="col">CreatedAt</th>
                     <th scope="col">Action</th>
-
                 </tr>
             </thead>
+            <tbody>
+                <tr>
+                    <td>10</td>
+                    <td>Joselyne Uwingabire</td>
+                    <td>uwingajoselyne@gmail.com</td>
+                    <td>Kigali,Rwanda</td>
+                    <td>+250 785991851</td>
+                    <td>24/10/2024</td>
+                    <td>
+                        <a class="btn btn-danger btn-sm" href="/myshop/edit.php">Edit</a>
+                        <a class="btn btn-danger btn-sm" href="/myshop/delete.php">Delete</a>
+                    </td>
+                </tr>
+            </tbody>
         </table>
 
     </div>
