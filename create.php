@@ -33,9 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $phone = '';
         $address = '';
         $successMessage = 'Client added correctly';
-
-        $conn->close();
-
+        header("location: /myshop/index.php");
     } while (false);
 }
 ?>
