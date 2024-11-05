@@ -52,25 +52,19 @@ include '../db_connect.php';
         <li class="nav-item">
           <a class="nav-link text-dark" href="../pages/billing.html">
             <i class="material-symbols-rounded opacity-5">receipt_long</i>
-            <span class="nav-link-text ms-1">Billing</span>
+            <span class="nav-link-text ms-1">Product</span>
           </a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-dark" href="../pages/virtual-reality.html">
             <i class="material-symbols-rounded opacity-5">view_in_ar</i>
-            <span class="nav-link-text ms-1">Virtual Reality</span>
+            <span class="nav-link-text ms-1">Orders</span>
           </a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-dark" href="../pages/rtl.html">
             <i class="material-symbols-rounded opacity-5">format_textdirection_r_to_l</i>
-            <span class="nav-link-text ms-1">RTL</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-dark" href="../pages/notifications.html">
-            <i class="material-symbols-rounded opacity-5">notifications</i>
-            <span class="nav-link-text ms-1">Notifications</span>
+            <span class="nav-link-text ms-1">Payment</span>
           </a>
         </li>
                 </ul>
@@ -177,7 +171,7 @@ include '../db_connect.php';
 
                                                 </td>
                                                 <td class="align-middle text-center text-sm text-white">
-                                                    <a href="javascript:;" class="text-white font-weight-bold text-xs badge badge-sm bg-gradient-success" data-toggle="tooltip" data-original-title="Edit user">  Edit </a>
+                                                    <a href="edit.php?id=' . $row['id'] . '" class="text-white font-weight-bold text-xs badge badge-sm bg-gradient-success" data-toggle="tooltip" data-original-title="Edit user">  Edit </a>
 
                                             <a href="delete.php?id=' . $row['id'] . '" class="text-white font-weight-bold text-xs badge badge-sm bg-gradient-primary" data-toggle="tooltip" data-original-title="Edit user" 
     onclick="return confirm(\'Are you sure you want to delete this item?\');">Delete</a>
