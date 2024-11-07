@@ -3,18 +3,16 @@ include '../db_connect.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $name = $_POST['name'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    $address = $_POST['address'];
-    $phone = $_POST['phone'];
+    $description = $_POST['description'];
+    $price = $_POST['price'];
+   
 
-    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-    $query = "INSERT INTO clients (name, email, password, address, phone) VALUES ('$name', '$email', '$hashed_password', '$address', '$phone')";
+    $query = "INSERT INTO products (name, description,price) VALUES ('$name', '$description', '$price')";
 
     if (mysqli_query($conn, $query)) {
         echo "<script>
-                alert('Client successfully added!');
-                window.location.href = '../pages/tables.php';
+                alert('product successfully added!');
+                window.location.href = './product.php';
               </script>";
     } else {
         echo "Error: " . mysqli_error($conn);
@@ -103,25 +101,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                 <form method="POST">
                                     <!-- Client Name -->
                                     <div class="mb-3 input-group input-group-outline mb-3">
-                                        <input type="text" class="form-control w-full h-25 p-1" placeholder="Client Name" name="name" required>
+                                        <input type="text" class="form-control w-full h-25 p-1" placeholder="Product Name" name="name" required>
                                     </div>
                                     <!-- Email -->
                                     <div class="mb-3 input-group input-group-outline mb-3">
-                                        <input type="email" class="form-control" placeholder="email" name="email" required>
+                                        <input type="text" class="form-control" placeholder="Description" name="description" required>
                                     </div>
                                     <!-- Phone Number -->
                                     <div class="mb-3 input-group input-group-outline mb-3">
-                                        <input type="text" class="form-control" placeholder="password" name="password" required>
+                                        <input type="number" class="form-control" placeholder="Price" name="price" required>
                                     </div>
                                     <!-- Address -->
-                                    <div class="mb-3 input-group input-group-outline mb-3">
-                                        <input type="text" class="form-control" placeholder="address" name="address">
-                                    </div>
-                                    <div class="mb-3 input-group input-group-outline mb-3">
-                                        <input type="text" class="form-control" placeholder="phone" name="phone">
-                                    </div>
                                     <div class="d-flex justify-content-center">
-                                        <button type="submit" class="btn bg-gradient-dark">Create Client</button>
+                                        <button type="submit" class="btn bg-gradient-dark">Create Product</button>
                                     </div>
                                 </form>
                             </div>

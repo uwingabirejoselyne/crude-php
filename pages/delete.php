@@ -5,7 +5,7 @@ if (isset($_GET['id'])) {
     $id = $_GET['id'];
 
     // Update the status to 'deleted' instead of deleting the record
-    $sql = "UPDATE clients SET status = 'deleted' WHERE id = $id";
+    $sql = "UPDATE clients SET status = 'deactivated' WHERE id = $id";
 
     if ($conn->query($sql) === TRUE) {
         echo "Status updated to 'deleted' successfully";
